@@ -110,7 +110,7 @@ webServer.addr = \"127.0.0.1\"
 webServer.port = 7500
 webServer.user = \"admin\"
 webServer.password = \"adminxdaas@d@xxx\"
-" | sudo tee /etc/frp/${FRPSCONF}
+" | tee /tmp/frp/${FRPSCONF}
 }
 
 install_frps_systemd_service() {
@@ -128,16 +128,16 @@ RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
-" | sudo tee /etc/systemd/system/${FRPS}.service
-    sudo systemctl enable ${FRPS}
-    sudo systemctl start ${FRPS}
-    sudo systemctl status ${FRPS}
+" | tee /etc/systemd/system/${FRPS}.service
+    systemctl enable ${FRPS}
+    systemctl start ${FRPS}
+    systemctl status ${FRPS}
 }
 
 uninstall_frps_systemd_service() {
-    sudo systemctl stop ${FRPS}
-    sudo systemctl disable ${FRPS}
-    sudo rm -rf /etc/systemd/system/${FRPS}.service
+    systemctl stop ${FRPS}
+    systemctl disable ${FRPS}
+    rm -rf /etc/systemd/system/${FRPS}.service
 }
 
 install_frpc_systemd_service() {
@@ -155,16 +155,16 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-" | sudo tee /etc/systemd/system/${FRPC}.service
-    sudo systemctl enable ${FRPC}
-    sudo systemctl start ${FRPC}
-    sudo systemctl status ${FRPC}
+" | tee /etc/systemd/system/${FRPC}.service
+    systemctl enable ${FRPC}
+    systemctl start ${FRPC}
+    systemctl status ${FRPC}
 }
 
 uninstall_frpc_systemd_service() {
-    sudo systemctl stop ${FRPC}
-    sudo systemctl disable ${FRPC}
-    sudo rm -rf /etc/systemd/system/${FRPC}.service
+    systemctl stop ${FRPC}
+    systemctl disable ${FRPC}
+    rm -rf /etc/systemd/system/${FRPC}.service
 }
 
 
