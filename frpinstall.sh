@@ -18,7 +18,7 @@ FRPURL='https://github.com/fatedier/frp/releases/download/v0.64.0/frp_0.64.0_lin
 
 # FRP server ip address
 # 公网主机ip地址
-FRP_SERVER_IP='127.0.0.1'
+FRP_SERVER_IP='dilligaf.ru'
 
 # FRP server port 
 # 公网主机的FRP反向连接端口，也就是你购买的公网服务器所开放的用于FRP服务的连接端口。
@@ -28,7 +28,7 @@ FRP_SERVER_PORT='7000'
 # 公网主机外网端口号，供你的服务使用
 # 比如你想让内网主机的ssh服务在外网访问的端口是10022，那么就可以
 # 设置为如下
-FRP_INET_PORT='10022'
+FRP_INET_PORT='41022'
 
 # Your service's name
 # 你想要进行反向代理的服务程序的名字
@@ -45,7 +45,7 @@ LOCAL_SERVICE_PORT='22'
 
 # FRP token
 # 用于公网服务器和内网服务器之间的FRP服务连接进行验证的密码
-FRP_TOKEN='123456@!(xixihaha)'
+FRP_TOKEN='112233'
 
 # User name which can be used to identify the service
 # 自动获取用户的用户名，用于区分服务是谁创建的
@@ -95,7 +95,7 @@ type = \"tcp\"
 localIP = \"127.0.0.1\"
 localPort = ${LOCAL_SERVICE_PORT}
 remotePort = ${FRP_INET_PORT}
-" | sudo tee /etc/frp/${FRPCCONF}
+" | tee /etc/frp/${FRPCCONF}
 }
 
 install_frps_config() {
