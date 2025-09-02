@@ -227,17 +227,17 @@ install_frp() {
 
     if [ ! -f /usr/local/bin/frpc ]; then
         echo "Copying ${TARDIR}/frpc to /usr/local/bin/frpc"
-        sudo cp ${TARDIR}/frpc /usr/local/bin/frpc
+        cp ${TARDIR}/frpc /usr/local/bin/frpc
     fi
 
     if [ ! -f /usr/local/bin/frps ]; then
         echo "Copying ${TARDIR}/frps to /usr/local/bin/frps"
-        sudo cp ${TARDIR}/frps /usr/local/bin/frps
+        cp ${TARDIR}/frps /usr/local/bin/frps
     fi
 
     if [ ! -d /etc/frp ]; then
         echo "Creating frp configuration directory"
-        sudo mkdir /etc/frp
+        mkdir /etc/frp
     fi
     install_frpc_config
     install_frps_config
