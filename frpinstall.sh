@@ -35,7 +35,7 @@ FRP_INET_PORT='41022'
 # 比如这里想对ssh进行反向代理，那么就填ssh
 # 服务的名字随便起，只要你自己知道这个服务是干嘛的就行
 # 命名不要在单词之间有空格
-SERVICE_NAME='ssh'
+SERVICE_NAME='ssh_pve_new_09-2025'
 
 # Your service's port
 # 内网的主机上你的服务所占用的端口号
@@ -87,7 +87,7 @@ serverAddr = \"${FRP_SERVER_IP}\"
 serverPort = ${FRP_SERVER_PORT}
 
 auth.method = \"token\"
-auth.token = "r00tr00t"
+auth.token = \"r00tr00t\"
 
 [[proxies]]
 name = \"${SERVICE_NAME}\"
