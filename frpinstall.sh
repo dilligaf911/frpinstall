@@ -87,7 +87,7 @@ serverAddr = \"${FRP_SERVER_IP}\"
 serverPort = ${FRP_SERVER_PORT}
 
 auth.method = \"token\"
-auth.token = \"${FRP_TOKEN}\"
+auth.token = "r00tr00t"
 
 [[proxies]]
 name = \"${SERVICE_NAME}\"
