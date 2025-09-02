@@ -240,7 +240,7 @@ install_frp() {
         mkdir /etc/frp
     fi
     install_frpc_config
-    install_frps_config
+    install_frpc_service
 }
 
 uninstall_frp() {
