@@ -18,7 +18,7 @@ FRPURL='https://github.com/fatedier/frp/releases/download/v0.64.0/frp_0.64.0_lin
 
 # FRP server ip address
 # 公网主机ip地址
-FRP_SERVER_IP='dilligaf.ru'
+FRP_SERVER_IP='8.8.8.8'
 
 # FRP server port 
 # 公网主机的FRP反向连接端口，也就是你购买的公网服务器所开放的用于FRP服务的连接端口。
@@ -28,20 +28,20 @@ FRP_SERVER_PORT='7000'
 # 公网主机外网端口号，供你的服务使用
 # 比如你想让内网主机的ssh服务在外网访问的端口是10022，那么就可以
 # 设置为如下
-FRP_INET_PORT='41022'
+FRP_INET_PORT='8888'
 
 # Your service's name
 # 你想要进行反向代理的服务程序的名字
 # 比如这里想对ssh进行反向代理，那么就填ssh
 # 服务的名字随便起，只要你自己知道这个服务是干嘛的就行
 # 命名不要在单词之间有空格
-SERVICE_NAME='ssh_pve_new_09-2025'
+SERVICE_NAME='web_srv'
 
 # Your service's port
 # 内网的主机上你的服务所占用的端口号
 # 比如你想内内网主机的ssh暴露到公网上，那么就可以设置LOCAL_PORT=22
 # 因为内网主机的ssh服务的端口是22
-LOCAL_SERVICE_PORT='22'
+LOCAL_SERVICE_PORT='80'
 
 # FRP token
 # 用于公网服务器和内网服务器之间的FRP服务连接进行验证的密码
@@ -87,7 +87,7 @@ serverAddr = \"${FRP_SERVER_IP}\"
 serverPort = ${FRP_SERVER_PORT}
 
 auth.method = \"token\"
-auth.token = \"r00tr00t\"
+auth.token = \"${FRP_TOKEN}\"
 
 [[proxies]]
 name = \"${SERVICE_NAME}\"
